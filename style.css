@@ -244,17 +244,25 @@ hr {
     color: #555;
 }
 
-/* 7. PROYEK LAIN */
+/* 7. PROYEK LAIN (Diperbarui agar sama dengan grid-7 di mobile) */
 .project-gallery {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 kolom di mobile */
+    /* 2 kolom di mobile (sama seperti .project-grid-7) */
+    grid-template-columns: repeat(2, 1fr); 
     gap: 10px;
     margin-top: 20px;
 }
-.project-gallery img {
+.project-gallery img,
+.project-gallery video {
     width: 100%;
-    height: auto;
+    height: 100%; /* Diubah agar object-fit bekerja baik */
     object-fit: cover;
+}
+/* Gambar pertama mengambil 2 kolom di mobile (sama seperti .project-grid-7) */
+.project-gallery img:nth-child(1),
+.project-gallery video:nth-child(1) {
+    grid-column: span 2;
+    grid-row: auto; 
 }
 .project-description {
     max-width: 90%;
@@ -344,8 +352,8 @@ hr {
     }
 
     .my-art, .other-projects {
-        padding-top: 100px; 
-        padding-bottom: 100px; 
+        padding-top: 50px; 
+        padding-bottom: 50px; 
     }
     /* --- Akhir Header --- */
 
@@ -409,6 +417,7 @@ hr {
         gap: 15px;
         width: 100%;
         max-width: 90%; 
+        margin-top: 20px;
     }
 
     /* Gambar pertama mengambil 2x2 sel grid untuk visual yang menonjol */
@@ -465,80 +474,73 @@ hr {
     }
     
 
-    /* ======================================= */
-/* MEDIA QUERY untuk LAYOUT DESKTOP/LAPTOP */
-/* ======================================= */
-@media (min-width: 768px) {
-    /* ... (CSS bagian lain di sini) ... */
-
-    /* --- 7. OTHER PROJECTS --- */
+    /* --- 7. OTHER PROJECTS (Diperbarui agar sama dengan grid-7 di desktop) --- */
     .other-projects {
         padding: 0 50px;
         text-align: center;
     }
 
-    /* ********** MODIFIKASI BERIKUT ********** */
-    /* Mengganti aturan .project-gallery dengan aturan .project-grid-7 */
     .project-gallery {
-        /* Menggunakan 3 kolom di desktop */
+        /* Menggunakan 3 kolom di desktop (sama seperti .project-grid-7) */
         display: grid;
         grid-template-columns: repeat(3, 1fr); 
         gap: 15px;
         width: 100%;
-        max-width: 90%; /* Sesuaikan agar sesuai dengan ukuran .project-grid-7 */
-        margin: 30px auto; /* Tambahkan auto margin agar berada di tengah */
-        justify-items: initial; /* Reset properti justify-items */
+        max-width: 90%; 
+        margin: 30px auto; 
+        justify-items: initial;
     }
 
-    /* Menentukan tata letak 7 item proyek secara spesifik */
-    .project-gallery img:nth-child(1) {
+    .project-gallery img,
+    .project-gallery video {
+        width: 100%; 
+        height: 100%; 
+        object-fit: cover; 
+        /* Menghapus/mereset style estetika lama agar sama dengan grid-7 */
+        border-radius: 0;
+        background: none;
+        box-shadow: none;
+        transition: none;
+    }
+
+    /* Menentukan tata letak 7 item proyek secara spesifik (sama seperti .project-grid-7) */
+    .project-gallery img:nth-child(1),
+    .project-gallery video:nth-child(1) {
         grid-column: span 2;
         grid-row: span 2;
     }
     
-    .project-gallery img:nth-child(2) {
+    .project-gallery img:nth-child(2),
+    .project-gallery video:nth-child(2) {
         grid-column: 3 / 4;
         grid-row: 1 / 2;
     }
-    .project-gallery img:nth-child(3) {
+    .project-gallery img:nth-child(3),
+    .project-gallery video:nth-child(3) {
         grid-column: 3 / 4;
         grid-row: 2 / 3;
     }
-    .project-gallery img:nth-child(4) {
+    .project-gallery img:nth-child(4),
+    .project-gallery video:nth-child(4) {
         grid-column: 1 / 2;
         grid-row: 3 / 4;
     }
-    .project-gallery img:nth-child(5) {
+    .project-gallery img:nth-child(5),
+    .project-gallery video:nth-child(5) {
         grid-column: 2 / 3;
         grid-row: 3 / 4;
     }
-    .project-gallery img:nth-child(6) {
+    .project-gallery img:nth-child(6),
+    .project-gallery video:nth-child(6) {
         grid-column: 3 / 4;
         grid-row: 3 / 4;
     }
-    .project-gallery img:nth-child(7) {
+    .project-gallery img:nth-child(7),
+    .project-gallery video:nth-child(7) {
         grid-column: 1 / 2; 
         grid-row: 4 / 5;
     }
-    /* **************************************** */
-
-
-    /* Memperbarui style untuk gambar & video di project-gallery */
-    .project-gallery img,
-    .project-gallery video {
-        /* Hapus width dan height statis agar grid layout berfungsi */
-        width: 100%; 
-        height: 100%; 
-        object-fit: cover; 
-        border-radius: 0; /* Hapus radius jika ingin konsisten dengan grid-7 */
-        background: none; /* Hapus background jika ingin konsisten dengan grid-7 */
-        box-shadow: none; /* Hapus box-shadow jika ingin konsisten dengan grid-7 */
-
-        transition: none; /* Hapus transisi hover jika ingin konsisten dengan grid-7 */
-    }
-
-    /* Efek hover aesthetic dihilangkan agar konsisten dengan grid-7, 
-       tapi jika Anda ingin mempertahankannya, biarkan blok di bawah ini */
+    /* Efek hover aesthetic dihilangkan agar konsisten dengan grid-7 */
     /*
     .project-gallery img:hover,
     .project-gallery video:hover {
@@ -546,9 +548,7 @@ hr {
         box-shadow: 0 8px 16px rgba(0,0,0,0.2);
     }
     */
-    
-    /* ... (CSS bagian lain di sini) ... */
-}
+
 
     /* --- 8. FOOTER --- */
     .footer {
