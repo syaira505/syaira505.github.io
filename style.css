@@ -56,6 +56,7 @@ ul {
 
 /* ============== PERBAIKAN NAVBAR (MOBILE DEFAULT) ============== */
 nav {
+    display: flex;
     position: fixed;
     top: 0;
     left: 0;
