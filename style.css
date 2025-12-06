@@ -1,0 +1,521 @@
+/* RESET DAN FONT */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #1a1a1a;
+    background-color: #ffffff;
+    line-height: 1.6;
+    max-width: 1200px;
+    margin: 0 auto; /* Tengah di desktop */
+}
+
+/* TYPOGRAPHY */
+.name-title, .portfolio-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.5rem; /* Ukuran default untuk mobile */
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.job-description li {
+    position: relative;
+    padding-left: 15px;
+}
+
+.job-description li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+}
+
+/* SECTION STRUCTURE */
+.section {
+    position: relative;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #eee;
+    margin: 0 20px;
+}
+
+.page-number {
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    font-size: 0.8rem;
+    color: #999;
+}
+
+/* PLACEHOLDER ICON (sesuai gambar) */
+.icon-placeholder {
+    width: 60px;
+    height: 60px;
+    border: 1px solid #1a1a1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    transform: rotate(-10deg);
+    margin: 20px 0;
+}
+
+.icon-placeholder.large {
+    width: 80px;
+    height: 80px;
+    font-size: 3rem;
+    margin: 30px 0;
+}
+
+/* 1. HEADER / COVER (Mobile) */
+.header {
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.name-title {
+    font-size: 2.5rem; 
+    margin-bottom: 10px;
+}
+
+.portfolio-title {
+    font-size: 4rem; 
+    font-weight: 300;
+    line-height: 1;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.profile-image-container {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    margin: 20px auto;
+    transform: rotate(5deg);
+    background-color: #f0f0f0;
+}
+
+.profile-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: rotate(-5deg) scale(1.1);
+}
+
+/* LAYOUT MULTI KOLOM (Mobile Default) */
+.about-me, .work-experience, .skills-expertise {
+    display: flex;
+    flex-direction: column;
+}
+
+.content-left, .content-right {
+    margin-bottom: 20px;
+}
+
+/* 2. TENTANG SAYA */
+.about-me .content-right img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+.about-me .about-text {
+    max-width: 90%;
+}
+
+/* 3. PENGALAMAN KERJA */
+.experience-item {
+    margin-bottom: 25px;
+}
+.job-title {
+    font-weight: bold;
+}
+.company-name {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+/* ==================================================== */
+/* PERUBAHAN BARU: GRID 7 GAMBAR DI WORK EXPERIENCE */
+/* ==================================================== */
+.project-grid-7 {
+    display: grid;
+    /* 2 kolom di mobile */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 10px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.project-grid-7 img {
+    width: 100%;
+    height: 100%; 
+    object-fit: cover; 
+}
+
+/* Gambar pertama mengambil 2 kolom di mobile (untuk menonjol) */
+.project-grid-7 img:first-child {
+    grid-column: span 2;
+}
+/* ==================================================== */
+
+/* 5. KARYA SENI (MY ART) */
+.my-art {
+    text-align: center;
+}
+.art-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 20px;
+}
+.art-item img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+.art-caption {
+    font-weight: bold;
+}
+.art-detail {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* 6. QUOTE/MOTO */
+.quote-moto {
+    text-align: center;
+}
+.quote-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.quote-text {
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+.quote-moto img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 7. PROYEK LAIN */
+.project-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 kolom di mobile */
+    gap: 10px;
+    margin-top: 20px;
+}
+.project-gallery img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+.project-description {
+    max-width: 90%;
+    margin-bottom: 20px;
+}
+
+/* 8. FOOTER */
+.footer {
+    text-align: center;
+    padding: 50px 20px;
+}
+.footer-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+/* ======================================= */
+/* MEDIA QUERY untuk LAYOUT DESKTOP/LAPTOP */
+/* ======================================= */
+@media (min-width: 768px) {
+    
+    /* Peningkatan padding dan ukuran font dasar untuk semua bagian */
+    .section {
+        padding: 80px 100px; /* Padding (jarak) untuk semua section ditingkatkan */
+    }
+
+    .page-number {
+        top: 80px; 
+        right: 100px;
+        font-size: 1rem; /* Ukuran nomor halaman ditingkatkan */
+    }
+
+    .section-title {
+        font-size: 3rem; /* Judul bagian utama (A LITTLE ABOUT ME, dll) ditingkatkan */
+        margin-bottom: 0;
+    }
+
+    /* --- 1. HEADER / COVER (Desktop) --- */
+    .header {
+        text-align: center;
+        padding-top: 100px; 
+        padding-bottom: 100px; 
+    }
+
+    .name-title {
+        font-size: 5.5rem; /* Ukuran nama besar */
+        letter-spacing: 5px; 
+        margin-bottom: 10px;
+    }
+
+    .portfolio-title {
+        font-size: 5.5rem; /* Ukuran PORTOFOLIO SANGAT BESAR */
+        font-weight: 300; 
+        margin-top: 50px; 
+        margin-bottom: 30px;
+    }
+    
+    .profile-image-container {
+        width: 250px; /* Ukuran foto besar */
+        height: 250px;
+        margin: 40px auto 0 auto; 
+    }
+
+    .subtitle {
+        font-size: 1.1rem;
+        margin-top: 0; 
+    }
+
+    .my-art, .other-projects {
+        padding-top: 100px; 
+        padding-bottom: 100px; 
+    }
+    /* --- Akhir Header --- */
+
+
+    /* 2, 3, 4 - Layout 2 Kolom di Desktop */
+    .about-me, .work-experience, .skills-expertise {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .content-left {
+        flex: 1;
+        padding-right: 50px;
+    }
+
+    .content-right {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        position: relative;
+    }
+    
+    /* --- 2. A LITTLE ABOUT ME --- */
+    .about-me .about-text {
+        font-size: 1.1rem; /* Ukuran teks ditingkatkan */
+        line-height: 1.8;
+        margin-top: 20px;
+    }
+    .about-me .content-right img {
+        max-width: 80%;
+    }
+    
+    /* --- 3. WORK EXPERIENCE --- */
+    .work-experience .content-left {
+        flex: 1.5; 
+        padding-top: 20px;
+    }
+    .job-title {
+        font-size: 1.2rem; /* Judul pekerjaan ditingkatkan */
+    }
+    .company-name {
+        font-size: 1rem;
+    }
+    .job-description li {
+        font-size: 1rem;
+    }
+    .experience-item {
+        margin-bottom: 40px; /* Jarak antar item ditingkatkan */
+    }
+    .work-experience .content-right {
+        flex: 1;
+        align-items: flex-end;
+        padding-top: 20px; /* Tambahkan padding atas agar sejajar dengan content-left */
+    }
+    
+    /* ==================================================== */
+    /* PERUBAHAN BARU: ATURAN GRID 7 GAMBAR UNTUK DESKTOP */
+    /* ==================================================== */
+    .project-grid-7 {
+        /* Menggunakan 3 kolom di desktop */
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 15px;
+        width: 100%;
+        max-width: 90%; 
+    }
+
+    /* Gambar pertama mengambil 2x2 sel grid untuk visual yang menonjol */
+    .project-grid-7 img:nth-child(1) {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+    
+    /* Mengatur posisi gambar berikutnya */
+    .project-grid-7 img:nth-child(2) {
+        grid-column: 3 / 4;
+        grid-row: 1 / 2;
+    }
+    .project-grid-7 img:nth-child(3) {
+        grid-column: 3 / 4;
+        grid-row: 2 / 3;
+    }
+    .project-grid-7 img:nth-child(4) {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+    }
+    .project-grid-7 img:nth-child(5) {
+        grid-column: 2 / 3;
+        grid-row: 3 / 4;
+    }
+    .project-grid-7 img:nth-child(6) {
+        grid-column: 3 / 4;
+        grid-row: 3 / 4;
+    }
+    .project-grid-7 img:nth-child(7) {
+        grid-column: 1 / 2; 
+        grid-row: 4 / 5;
+    }
+    /* ==================================================== */
+
+
+    /* --- 5. MY ART --- */
+    .my-art .section-title {
+        margin-bottom: 50px;
+    }
+    .art-gallery {
+        flex-direction: row;
+        gap: 5%;
+        margin-top: 50px;
+    }
+    .art-item {
+        flex: 1;
+    }
+    .art-caption {
+        font-size: 1.2rem; /* Caption ditingkatkan */
+    }
+    .art-detail {
+        font-size: 1rem;
+    }
+    
+
+    /* --- 7. OTHER PROJECTS --- */
+    /* OTHER PROJECTS */
+.other-projects {
+    padding: 0 50px;
+    text-align: center;
+}
+
+.project-gallery {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    justify-items: center;
+}
+
+/* Style untuk gambar & video agar sama */
+.project-gallery img,
+.project-gallery video {
+    width: 220px;
+    height: 220px;          /* biar square & rapi */
+    object-fit: cover;       /* foto/video tidak kepotong aneh */
+    border-radius: 12px;
+
+    background: #f8f8f8;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+
+    transition: 0.25s ease;
+}
+.my-art, .other-projects {
+    padding-top: 50px; 
+    padding-bottom: 50px; 
+}
+
+/* Efek hover aesthetic */
+.project-gallery img:hover,
+.project-gallery video:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+
+
+    /* --- 8. FOOTER --- */
+    .footer {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.footer-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.footer-contact {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.footer-contact a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.footer-contact a:hover {
+    text-decoration: underline;
+}
+
+.page-number {
+    display: block;
+    margin-top: 30px;
+    font-size: 14px;
+    color: #aaa;
+}
+
+}
