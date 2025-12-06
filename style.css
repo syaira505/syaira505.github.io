@@ -465,45 +465,90 @@ hr {
     }
     
 
+    /* ======================================= */
+/* MEDIA QUERY untuk LAYOUT DESKTOP/LAPTOP */
+/* ======================================= */
+@media (min-width: 768px) {
+    /* ... (CSS bagian lain di sini) ... */
+
     /* --- 7. OTHER PROJECTS --- */
     .other-projects {
         padding: 0 50px;
         text-align: center;
     }
 
+    /* ********** MODIFIKASI BERIKUT ********** */
+    /* Mengganti aturan .project-gallery dengan aturan .project-grid-7 */
     .project-gallery {
-        margin-top: 30px;
+        /* Menggunakan 3 kolom di desktop */
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 25px;
-        justify-items: center;
+        grid-template-columns: repeat(3, 1fr); 
+        gap: 15px;
+        width: 100%;
+        max-width: 90%; /* Sesuaikan agar sesuai dengan ukuran .project-grid-7 */
+        margin: 30px auto; /* Tambahkan auto margin agar berada di tengah */
+        justify-items: initial; /* Reset properti justify-items */
     }
 
-    /* Style untuk gambar & video agar sama */
+    /* Menentukan tata letak 7 item proyek secara spesifik */
+    .project-gallery img:nth-child(1) {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+    
+    .project-gallery img:nth-child(2) {
+        grid-column: 3 / 4;
+        grid-row: 1 / 2;
+    }
+    .project-gallery img:nth-child(3) {
+        grid-column: 3 / 4;
+        grid-row: 2 / 3;
+    }
+    .project-gallery img:nth-child(4) {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+    }
+    .project-gallery img:nth-child(5) {
+        grid-column: 2 / 3;
+        grid-row: 3 / 4;
+    }
+    .project-gallery img:nth-child(6) {
+        grid-column: 3 / 4;
+        grid-row: 3 / 4;
+    }
+    .project-gallery img:nth-child(7) {
+        grid-column: 1 / 2; 
+        grid-row: 4 / 5;
+    }
+    /* **************************************** */
+
+
+    /* Memperbarui style untuk gambar & video di project-gallery */
     .project-gallery img,
     .project-gallery video {
-        width: 220px;
-        height: 220px; 
+        /* Hapus width dan height statis agar grid layout berfungsi */
+        width: 100%; 
+        height: 100%; 
         object-fit: cover; 
-        border-radius: 12px;
+        border-radius: 0; /* Hapus radius jika ingin konsisten dengan grid-7 */
+        background: none; /* Hapus background jika ingin konsisten dengan grid-7 */
+        box-shadow: none; /* Hapus box-shadow jika ingin konsisten dengan grid-7 */
 
-        background: #f8f8f8;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-
-        transition: 0.25s ease;
-    }
-    .my-art, .other-projects {
-        padding-top: 50px; 
-        padding-bottom: 50px; 
+        transition: none; /* Hapus transisi hover jika ingin konsisten dengan grid-7 */
     }
 
-    /* Efek hover aesthetic */
+    /* Efek hover aesthetic dihilangkan agar konsisten dengan grid-7, 
+       tapi jika Anda ingin mempertahankannya, biarkan blok di bawah ini */
+    /*
     .project-gallery img:hover,
     .project-gallery video:hover {
         transform: translateY(-6px);
         box-shadow: 0 8px 16px rgba(0,0,0,0.2);
     }
-
+    */
+    
+    /* ... (CSS bagian lain di sini) ... */
+}
 
     /* --- 8. FOOTER --- */
     .footer {
